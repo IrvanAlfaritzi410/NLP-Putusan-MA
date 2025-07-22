@@ -1,0 +1,206 @@
+[
+    {
+        "klasifikasi_perkara": "Pidana Umum",
+        "informasi_umum": {
+            "nomor_putusan": "1384/Pid.B/2018/PN Jkt.Utr.",
+            "nama_pengadilan": "Pengadilan Negeri Jakarta Utara",
+            "tingkat_pengadilan": "Pengadilan Negeri",
+            "tanggal_putusan": "2019-02-14"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Terdakwa",
+                "nama_lengkap": "CANDRA NOVIANTO",
+                "tempat_lahir": "Tegal",
+                "tanggal_lahir": "1989-11-05",
+                "usia": 29,
+                "jenis_kelamin": "Laki-laki",
+                "pekerjaan": "Swasta",
+                "agama": "Khatolik",
+                "alamat": "Jalan Panggunga Mas II NO. 67 Rt. 005/001 Kel. Panggung  Lor,  Kec.  Semarang  Utara,  Kota Semarang, Jawa Tengah atau Jalan Cempaka Sari III  No.  16  RT.  014/008  Kel.  Harapan  Mulya, Kemayoran, Jakarta Pusat",
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "Saksi",
+                "nama_lengkap": "Sumarno",
+                "tempat_lahir": null,
+                "tanggal_lahir": null,
+                "usia": null,
+                "jenis_kelamin": null,
+                "pekerjaan": "anggota Kepolisian Polres Pelabuhan Tanjung Priok",
+                "agama": null,
+                "alamat": null,
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "Saksi",
+                "nama_lengkap": "Adit Satriyo Utomo",
+                "tempat_lahir": null,
+                "tanggal_lahir": null,
+                "usia": null,
+                "jenis_kelamin": null,
+                "pekerjaan": "anggota Kepolisian Polres Pelabuhan Tanjung Priok",
+                "agama": null,
+                "alamat": null,
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "Saksi",
+                "nama_lengkap": "Pranowo Hayu S.",
+                "tempat_lahir": null,
+                "tanggal_lahir": null,
+                "usia": null,
+                "jenis_kelamin": null,
+                "pekerjaan": "anggota Kepolisian Polres Pelabuhan Tanjung Priok",
+                "agama": null,
+                "alamat": null,
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "Saksi",
+                "nama_lengkap": "Richo Effendy Alias Rico",
+                "tempat_lahir": null,
+                "tanggal_lahir": null,
+                "usia": null,
+                "jenis_kelamin": null,
+                "pekerjaan": null,
+                "agama": null,
+                "alamat": null,
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "JPU",
+                "nama_lengkap": "Melda Siagian",
+                "tempat_lahir": null,
+                "tanggal_lahir": null,
+                "usia": null,
+                "jenis_kelamin": null,
+                "pekerjaan": null,
+                "agama": null,
+                "alamat": null,
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Terdakwa Candra Novianto didakwa telah membuat dan mengedarkan KTP elektronik palsu.  Kasus ini berawal dari penangkapan Richo Effendy yang mengaku mendapatkan KTP palsu dari terdakwa.",
+            "dakwaan_jpu": "Terdakwa terbukti bersalah melakukan tindak pidana \"Membuat surat palsu atau memalsukan surat yang dapat menimbulkan sesuatu hak, perikatan atau pembebasan hutang, atau yang diperuntukkan sebagai bukti daripada sesuatu hal dengan maksud untuk memakai atau menyuruh orang lain memakai surat tersebut seolah-olah isinya benar dan tidak dipalsu, jika pemakaian tersebut dapat menimbulkan kerugian, karena pemalsuan surat\" sebagaimana diatur dan diancam dalam Pasal 263 Ayat (1) KUHP.",
+            "pokok_gugatan": null,
+            "riwayat_penahanan": "Terdakwa ditangkap pada 21 September 2018 dan ditahan hingga 27 Februari 2019, dengan berbagai perpanjangan masa penahanan."
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": "Menyatakan  terdakwa  CANDRA  NOVIANTO terbukti  bersalah melakukan tindak pidana dan menjatuhkan pidana penjara selama 2 (dua) tahun dikurangi selama Terdakwa berada dalam tahanan, merampas barang bukti dan membebankan biaya perkara.",
+            "amar_putusan_pn_pa_ptun": "Menyatakan Terdakwa Candra Novianto terbukti secara sah dan meyakinkan bersalah melakukan tindak pidana \"Pemalsuan surat\", menjatuhkan pidana penjara 1 tahun 4 bulan, masa penangkapan dan penahanan dikurangkan dari pidana yang dijatuhkan, Terdakwa tetap ditahan, barang bukti dimusnahkan, dan membebankan biaya perkara Rp 5.000.",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Putusan berdasarkan fakta-fakta persidangan dan bukti yang diajukan, menyatakan Terdakwa terbukti memenuhi unsur-unsur Pasal 263 ayat (1) KUHP tentang pemalsuan surat.  Majelis Hakim mempertimbangkan hal-hal yang memberatkan dan meringankan dalam menjatuhkan pidana.",
+            "formalitas_permohonan": null
+        },
+        "sumber_url": "https://putusan3.mahkamahagung.go.id/direktori/putusan/84771ffa631520272cab7efbc09042c0.html"
+    },
+    {
+        "klasifikasi_perkara": "Pidana Umum",
+        "informasi_umum": {
+            "nomor_putusan": "207/Pid.B/2018/PN Jmr",
+            "nama_pengadilan": "Pengadilan Negeri Jember",
+            "tingkat_pengadilan": "Pengadilan Negeri",
+            "tanggal_putusan": "2018-05-08"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Terdakwa",
+                "nama_lengkap": "Eko Setyawan",
+                "tempat_lahir": "Jember",
+                "tanggal_lahir": "1974-08-11",
+                "usia": 43,
+                "jenis_kelamin": "Laki-laki",
+                "pekerjaan": "Wiraswasta",
+                "agama": "Islam",
+                "alamat": "Jl. Citra Pahlawan Dusun Krajan II RT.002 RW.007 Desa Keting Kecamatan Jombang Kabupaten Jember",
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Terdakwa didakwa telah tanpa hak mencetak, menerbitkan, dan/atau mendistribusikan dokumen kependudukan.  Kasus ini bermula dari laporan saksi yang merasa tertipu oleh terdakwa.",
+            "dakwaan_jpu": "Dakwaan pertama: Melakukan tindak pidana tanpa hak mencetak, menerbitkan dan/atau mendistribusikan dokumen kependudukan (Pasal 8 ayat (1) huruf C, Pasal 96 A UU RI No. 24 Tahun 2013). Dakwaan kedua: Pemalsuan surat terhadap akta otentik (Pasal 264 Ayat (1) ke 1 KUHP).",
+            "pokok_gugatan": null,
+            "riwayat_penahanan": "Terdakwa ditahan sejak 19 Desember 2017 hingga 29 Mei 2018, dengan berbagai perpanjangan masa penahanan oleh penyidik, penuntut umum, dan hakim."
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": "Menyatakan terdakwa EKO SETYAWAN bersalah; menjatuhkan pidana penjara 1 tahun 6 bulan dikurangi masa tahanan, denda Rp.1.000.000,00 subsidair 2 bulan kurungan; merampas barang bukti; membebani biaya perkara Rp.2.000,00.",
+            "amar_putusan_pn_pa_ptun": "Menyatakan terdakwa EKO SETYAWAN bersalah; menjatuhkan pidana penjara 1 tahun dan denda Rp.1.000.000,00 (subsidair 2 bulan kurungan); menetapkan masa penahanan dikurangkan dari pidana; menetapkan terdakwa tetap ditahan; memerintahkan perampasan barang bukti; membebani biaya perkara Rp.2.000,00.",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Putusan menyatakan terdakwa terbukti secara sah dan meyakinkan melakukan tindak pidana tanpa hak mencetak, menerbitkan, dan/atau mendistribusikan dokumen kependudukan.  Pertimbangan hakim didasarkan pada alat bukti dan kesaksian yang diajukan.",
+            "formalitas_permohonan": null
+        },
+        "sumber_url": "https://putusan3.mahkamahagung.go.id/direktori/putusan/42dfaa53298aa3a2649588946b89167e.html"
+    },
+    {
+        "klasifikasi_perkara": "Perdata",
+        "informasi_umum": {
+            "nomor_putusan": "65/Pdt.P/2025/PN Pwr",
+            "nama_pengadilan": "Pengadilan Negeri Purworejo",
+            "tingkat_pengadilan": "Pengadilan Negeri",
+            "tanggal_putusan": "2025-07-22"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Pemohon",
+                "nama_lengkap": "Imah Maryono",
+                "tempat_lahir": "Purworejo",
+                "tanggal_lahir": "1972-06-12",
+                "usia": 53,
+                "jenis_kelamin": "Perempuan",
+                "pekerjaan": "Karyawan Swasta",
+                "agama": "Islam",
+                "alamat": "Dusun Krajan RT 02 RW 02 Desa Kamijoro, Kecamatan Bener, Kabupaten Purworejo",
+                "nomor_ktp": "3175065206721003",
+                "nomor_kk": "3175060501098001",
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Pemohon mengajukan permohonan perbaikan nama dalam KTP elektronik dan Kartu Keluarga karena kesalahan nama saat pembuatan KTP elektronik di Jakarta.  Pemohon meminta agar nama Imah Maryono diubah menjadi Nurimah.",
+            "dakwaan_jpu": null,
+            "pokok_gugatan": "Perbaikan nama dalam KTP elektronik dan Kartu Keluarga dari Imah Maryono menjadi Nurimah.",
+            "riwayat_penahanan": null
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": null,
+            "amar_putusan_pn_pa_ptun": "Mengabulkan permohonan Pemohon; memberi izin kepada Pemohon untuk memperbaiki nama dalam KTP Elektronik dan Kartu Keluarga dari Imah Maryono menjadi Nurimah; memerintahkan Pemohon mengirimkan salinan penetapan kepada Dinas Kependudukan dan Pencatatan Sipil; membebankan biaya perkara kepada Pemohon.",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Putusan berdasarkan Pasal 56 UU No 23 Tahun 2006 tentang Administrasi Kependudukan yang mengatur perubahan nama berdasarkan penetapan pengadilan. Pengadilan Negeri Purworejo memiliki yurisdiksi atas perkara ini karena tempat tinggal pemohon.",
+            "formalitas_permohonan": null
+        },
+        "sumber_url": "https://putusan3.mahkamahagung.go.id/direktori/putusan/zaf066d7f7faca26a8ec313534333431.html"
+    }
+]
