@@ -1,0 +1,204 @@
+[
+    {
+        "klasifikasi_perkara": "Pidana Umum",
+        "informasi_umum": {
+            "nomor_putusan": "166/Pid.B/2022/PN Kpn",
+            "nama_pengadilan": "Pengadilan Negeri Kepanjen",
+            "tingkat_pengadilan": "Pengadilan Negeri",
+            "tanggal_putusan": "2022-06-15"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Terdakwa",
+                "nama_lengkap": "Atim",
+                "tempat_lahir": "Malang",
+                "tanggal_lahir": "1975-04-23",
+                "usia": 46,
+                "jenis_kelamin": "Laki-laki",
+                "pekerjaan": "Swasta",
+                "agama": "Islam",
+                "alamat": "Dusun Krajan Rt.013/Rw.002 Desa Tirtoyudo, Kecamatan Tirtoyudo, Kabupaten Malang",
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Terdakwa Atim didakwa melakukan pencurian dengan pemberatan pada 24 Juni 2021 di Dusun Sukodono, Desa Tirtoyudo, Kabupaten Malang.  Terdakwa mencongkel jendela rumah korban dan mengambil uang, STNK, dan KTP.",
+            "dakwaan_jpu": "Pencurian dengan pemberatan melanggar pasal 363 ayat (1) ke-5 KUHP.",
+            "pokok_gugatan": null,
+            "riwayat_penahanan": "Terdakwa ditahan sejak 2 Februari 2022 hingga 19 Mei 2022, dengan perpanjangan hingga 18 Juli 2022."
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": "Menyatakan terdakwa Atim terbukti bersalah dan menjatuhkan pidana penjara 2 tahun dikurangi masa penahanan, serta menetapkan biaya perkara Rp. 2.000,-",
+            "amar_putusan_pn_pa_ptun": "Menyatakan Terdakwa Atim terbukti bersalah melakukan pencurian dengan pemberatan dan menjatuhkan pidana penjara selama 2 tahun dikurangi masa penahanan, dengan perintah tetap ditahan.  Barang bukti berupa pisau dirampas dan dimusnahkan, sementara KTP dan STNK dikembalikan kepada korban. Biaya perkara Rp. 2.000,-",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Putusan menyatakan terdakwa terbukti melakukan pencurian dengan pemberatan berdasarkan keterangan saksi, pengakuan terdakwa, dan barang bukti.  Unsur-unsur pasal 363 ayat (1) ke-5 KUHP terpenuhi.",
+            "formalitas_permohonan": null
+        },
+        "nama_file": "putusan_166_pid.b_2022_pn_kpn_20250722113619.pdf"
+    },
+    {
+        "klasifikasi_perkara": "Perdata Agama",
+        "informasi_umum": {
+            "nomor_putusan": "xxxx/Pdt.G/2025/PA.Mdn",
+            "nama_pengadilan": "Pengadilan Agama Medan",
+            "tingkat_pengadilan": "Pengadilan Agama",
+            "tanggal_putusan": "2025-07-16"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Pemohon",
+                "nama_lengkap": null,
+                "tempat_lahir": "Lima Laras",
+                "tanggal_lahir": "1995-11-13",
+                "usia": 29,
+                "jenis_kelamin": null,
+                "pekerjaan": "Wiraswasta",
+                "agama": "Islam",
+                "alamat": "Jalan xxxxx, Kelurahan xxxxx, Kecamatan xxxxx, Kota Medan",
+                "nomor_ktp": "xxxxx",
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "Termohon",
+                "nama_lengkap": null,
+                "tempat_lahir": "Medan",
+                "tanggal_lahir": "2003-08-27",
+                "usia": 21,
+                "jenis_kelamin": null,
+                "pekerjaan": "Ibu Rumah Tangga",
+                "agama": "Islam",
+                "alamat": "Jalan xxxxx, Kelurahan xxxxx, Kecamatan xxxxx, Kota Medan",
+                "nomor_ktp": "xxxxx",
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Pemohon mengajukan permohonan cerai talak karena sering terjadi perselisihan dan pertengkaran dengan Termohon yang tidak dapat didamaikan.  Termohon tidak hadir dalam persidangan.",
+            "dakwaan_jpu": null,
+            "pokok_gugatan": "Permohonan cerai talak disebabkan pertengkaran terus menerus antara Pemohon dan Termohon, yang tidak dapat didamaikan lagi.",
+            "riwayat_penahanan": null
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": null,
+            "amar_putusan_pn_pa_ptun": "Mengabulkan gugatan Pemohon; memberi izin kepada Pemohon untuk menjatuhkan talak satu raj'i terhadap Termohon; membebankan biaya perkara kepada Pemohon.",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Pertengkaran terus menerus dan tidak adanya harapan untuk hidup rukun lagi menjadi dasar pertimbangan hakim mengabulkan permohonan cerai.  Putusan dijatuhkan secara verstek karena ketidakhadiran Termohon.",
+            "formalitas_permohonan": null
+        },
+        "nama_file": "putusan_2000_pdt.g_2025_pa.mdn_20250722150850.pdf"
+    },
+    {
+        "klasifikasi_perkara": "Perdata Agama",
+        "informasi_umum": {
+            "nomor_putusan": "xxxx/Pdt.G/2025/PA.Mdn",
+            "nama_pengadilan": "Pengadilan Agama Medan",
+            "tingkat_pengadilan": "Pengadilan Agama",
+            "tanggal_putusan": "2025-07-16"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Penggugat",
+                "nama_lengkap": null,
+                "tempat_lahir": "Kwala Bingai",
+                "tanggal_lahir": "1970-12-26",
+                "usia": 54,
+                "jenis_kelamin": null,
+                "pekerjaan": "Mengurus rumah tangga",
+                "agama": "Islam",
+                "alamat": "Jalan xxxxx, Kelurahan xxxxx, Kecamatan xxxxx, Kota Medan",
+                "nomor_ktp": "xxxxx",
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            },
+            {
+                "peran_pihak": "Tergugat",
+                "nama_lengkap": null,
+                "tempat_lahir": "Pematang Siantar",
+                "tanggal_lahir": "1959-12-31",
+                "usia": 65,
+                "jenis_kelamin": null,
+                "pekerjaan": "Tukang Becak",
+                "agama": "Islam",
+                "alamat": "Jalan xxxxx, Kelurahan xxxxx, Kecamatan xxxxx, Kabupaten Deli Serdang",
+                "nomor_ktp": "xxxxx",
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Penggugat mengajukan gugatan cerai terhadap Tergugat ke Pengadilan Agama Medan. Tergugat tidak hadir dalam persidangan.",
+            "dakwaan_jpu": null,
+            "pokok_gugatan": "Perselisihan dan pertengkaran terus menerus dalam rumah tangga, Tergugat tidak memberikan nafkah selama 7 bulan, dan tidak lagi hidup bersama selama 7 bulan.",
+            "riwayat_penahanan": null
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": null,
+            "amar_putusan_pn_pa_ptun": "Gugatan Penggugat dikabulkan. Talak satu ba'in sughra Tergugat terhadap Penggugat dijatuhkan. Biaya perkara dibebankan kepada Penggugat.",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Pertengkaran terus menerus dan tidak ada harapan untuk hidup rukun lagi, serta bukti-bukti yang diajukan Penggugat memenuhi syarat, sehingga gugatan dikabulkan.",
+            "formalitas_permohonan": null
+        },
+        "nama_file": "putusan_2061_pdt.g_2025_pa.mdn_20250722151121.pdf"
+    },
+    {
+        "klasifikasi_perkara": "Pidana Umum",
+        "informasi_umum": {
+            "nomor_putusan": "207/Pid.B/2018/PN Jmr",
+            "nama_pengadilan": "Pengadilan Negeri Jember",
+            "tingkat_pengadilan": "Pengadilan Negeri",
+            "tanggal_putusan": "2018-05-08"
+        },
+        "para_pihak": [
+            {
+                "peran_pihak": "Terdakwa",
+                "nama_lengkap": "Eko Setyawan",
+                "tempat_lahir": "Jember",
+                "tanggal_lahir": "1974-08-11",
+                "usia": 43,
+                "jenis_kelamin": "Laki-laki",
+                "pekerjaan": "Wiraswasta",
+                "agama": "Islam",
+                "alamat": "Jl. Citra Pahlawan Dusun Krajan II RT.002 RW.007 Desa Keting Kecamatan Jombang Kabupaten Jember",
+                "nomor_ktp": null,
+                "nomor_kk": null,
+                "nomor_akta_kelahiran": null,
+                "nomor_paspor": null
+            }
+        ],
+        "detail_perkara": {
+            "riwayat_perkara": "Terdakwa didakwa melakukan tindak pidana tanpa hak mencetak, menerbitkan, dan/atau mendistribusikan dokumen kependudukan. Terdakwa ditangkap setelah dilaporkan oleh saksi yang menjadi korban pemalsuan KTP.",
+            "dakwaan_jpu": "Dakwaan pertama: Melakukan tindak pidana tanpa hak mencetak, menerbitkan dan/atau mendistribusikan dokumen kependudukan (Pasal 8 ayat (1) huruf c UU No. 24 Tahun 2013). Dakwaan kedua: Pemalsuan surat terhadap akta otentik (Pasal 264 Ayat (1) ke 1 KUHP).",
+            "pokok_gugatan": null,
+            "riwayat_penahanan": "Terdakwa ditahan sejak 19 Desember 2017 sampai 30 Maret 2018, diperpanjang hingga 29 Mei 2018."
+        },
+        "amar_putusan": {
+            "amar_putusan_jpu": "Menyatakan terdakwa bersalah dan menjatuhkan pidana penjara 1 tahun 6 bulan, dikurangi masa tahanan, dan denda Rp 1.000.000,- subsidair 2 bulan kurungan.",
+            "amar_putusan_pn_pa_ptun": "Menyatakan terdakwa EKO SETYAWAN bersalah dan menjatuhkan pidana penjara 1 tahun dan denda Rp 1.000.000,- subsidair 2 bulan kurungan.",
+            "amar_putusan_pt_pta_pttun": null,
+            "amar_putusan_kasasi": null
+        },
+        "analisis_hukum": {
+            "pertimbangan_hukum": "Majelis Hakim menyatakan terdakwa terbukti secara sah dan meyakinkan melakukan tindak pidana tanpa hak mencetak, menerbitkan, dan/atau mendistribusikan dokumen kependudukan berdasarkan alat dan barang bukti yang diajukan serta keterangan saksi dan ahli. Putusan didasarkan pada Pasal 96 a UU RI Nomor 24 Tahun 2013.",
+            "formalitas_permohonan": null
+        },
+        "nama_file": "putusan_207_pid.b_2018_pn_jmr_20250722114008.pdf"
+    }
+]
