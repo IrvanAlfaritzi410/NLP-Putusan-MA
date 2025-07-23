@@ -1,6 +1,18 @@
-#Fungsi Pipeline untuk Memproses URL
-def proses_putusan_from_url(url):
-    """Mengambil URL, mengunduh PDF, dan menjalankan pipeline ekstraksi."""
+# Library Pihak Ketiga 
+import fitz  
+import requests
+from bs4 import BeautifulSoup
+
+# Library Standar Python 
+import os
+
+# Mengimpor fungsi ekstraksi dari file Extractor.py
+from extractor import ekstrak_data_dengan_gemini
+# Mengimpor variabel konfigurasi dari file config.py
+import config
+
+# Fungsi Pipeline untuk Memproses URL
+def proses_putusan_from_url(model, url):
     print(f"Memproses URL: {url}")
     try:
         headers = {'User-Agent': 'Mozilla/5.0'}
@@ -30,12 +42,13 @@ def proses_putusan_from_url(url):
         pdf_response.raise_for_status()
         pdf_content = pdf_response.content
         
-        # Membuat nama file dari bagian akhir URL
+        # Menyimpan file PDF yang diunduh
         pdf_filename = pdf_url.split('/')[-1]
         if not pdf_filename.lower().endswith('.pdf'):
-            pdf_filename += ".pdf" 
+            pdf_filename += ".pdf"
             
-        save_path = os.path.join(PDF_DOWNLOAD_FOLDER, pdf_filename)
+        # Menggunakan variabel PDF_DOWNLOAD_FOLDER dari config.py
+        save_path = os.path.join(config.PDF_DOWNLOAD_FOLDER, pdf_filename)
         with open(save_path, 'wb') as f:
             f.write(pdf_content)
         print(f"  └─ ✓ PDF berhasil diunduh dan disimpan di: {save_path}")
@@ -49,11 +62,12 @@ def proses_putusan_from_url(url):
             return None
             
         print("  └─ Mengirim teks ke Gemini untuk ekstraksi...")
-        hasil_json = ekstrak_data_dengan_gemini(full_text)
+        # PERBAIKAN: Meneruskan 'model' ke fungsi ekstraksi
+        hasil_json = ekstrak_data_dengan_gemini(model, full_text)
         
         if hasil_json:
             hasil_json['sumber_url'] = url
-            hasil_json['nama_file_lokal'] = pdf_filename # Menambahkan nama file lokal
+            hasil_json['nama_file_lokal'] = pdf_filename
         
         return hasil_json
 
