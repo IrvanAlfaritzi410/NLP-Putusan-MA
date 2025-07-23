@@ -1,0 +1,229 @@
+# ==============================================================================
+# EKSTRAKSI DARI URL DENGAN PROMPT UNIVERSAL
+# ==============================================================================
+
+# --- 1. Impor Library ---
+import os
+import json
+import pandas as pd
+import fitz  # PyMuPDF
+import google.generativeai as genai
+import requests
+from bs4 import BeautifulSoup
+import time
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# --- 2. Konfigurasi Proyek ---
+PDF_DOWNLOAD_FOLDER = 'downloaded_pdfs'
+OUTPUT_FILENAME_JSON = 'hasil_ekstraksi_putusan.json'
+MODEL_NAME = 'gemini-1.5-flash-latest'
+
+# --- 3. Setup API Key Gemini ---
+GOOGLE_API_KEY = os.environ.get('GEMINI_API_KEY')
+model = None
+if GOOGLE_API_KEY:
+    try:
+        genai.configure(api_key=GOOGLE_API_KEY)
+        model = genai.GenerativeModel(MODEL_NAME)
+        print("✓ Konfigurasi Gemini API berhasil.")
+    except Exception as e:
+        print(f"✗ Konfigurasi API gagal: {e}")
+else:
+    print("✗ Peringatan: Environment variable 'GEMINI_API_KEY' tidak ditemukan.")
+
+# --- 4. FUNGSI EKSTRAKSI DENGAN PROMPT UNIVERSAL BARU ---
+def ekstrak_data_dengan_gemini(teks_pdf):
+    """
+    Menganalisis teks PDF dan mengekstrak informasi detail ke dalam 
+    satu format JSON universal yang komprehensif.
+    """
+    # PROMPT BARU: Satu template untuk semua jenis kasus.
+    prompt = f"""
+    Anda adalah asisten hukum AI yang sangat ahli dalam menganalisis dan menstrukturkan dokumen putusan pengadilan di Indonesia.
+    Tugas Anda adalah membaca teks putusan berikut dan mengekstrak semua informasi yang relevan ke dalam format JSON yang telah ditentukan di bawah ini.
+
+    STRUKTUR JSON YANG WAJIB DIIKUTI:
+    {{
+      "klasifikasi_perkara": "string (Pilih dari: Pidana Umum, Pidana Khusus, Pidana Militer, Perdata, Perdata Agama, Perdata Khusus, TUN, Pajak)",
+      "informasi_umum": {{
+        "nomor_putusan": "string",
+        "nama_pengadilan": "string",
+        "tingkat_pengadilan": "string (Contoh: Pengadilan Negeri, Pengadilan Tinggi, Mahkamah Agung)",
+        "tanggal_putusan": "string (format: YYYY-MM-DD)"
+      }},
+      "para_pihak": [
+        {{
+          "peran_pihak": "string (Contoh: Terdakwa, Penggugat, Pemohon)",
+          "nama_lengkap": "string",
+          "tempat_lahir": "string",
+          "tanggal_lahir": "string (format: YYYY-MM-DD)",
+          "usia": "integer",
+          "jenis_kelamin": "string",
+          "pekerjaan": "string",
+          "agama": "string",
+          "alamat": "string",
+          "nomor_ktp": "string",
+          "nomor_kk": "string",
+          "nomor_akta_kelahiran": "string",
+          "nomor_paspor": "string"
+        }}
+      ],
+      "detail_perkara": {{
+        "riwayat_perkara": "string (rangkuman singkat 1-2 kalimat)",
+        "dakwaan_jpu": "string (rangkuman dakwaan jika kasus pidana, null jika bukan)",
+        "pokok_gugatan": "string (rangkuman gugatan jika kasus perdata/TUN, null jika bukan)",
+        "riwayat_penahanan": "string (rangkuman riwayat penahanan jika ada, null jika tidak)"
+      }},
+      "amar_putusan": {{
+        "amar_putusan_jpu": "string (rangkuman tuntutan jaksa jika ada, null jika tidak)",
+        "amar_putusan_pn_pa_ptun": "string (rangkuman putusan tingkat pertama)",
+        "amar_putusan_pt_pta_pttun": "string (rangkuman putusan tingkat banding, jika ada)",
+        "amar_putusan_kasasi": "string (rangkuman putusan Mahkamah Agung/Kasasi ini)"
+      }},
+      "analisis_hukum": {{
+        "pertimbangan_hukum": "string (rangkuman sangat singkat 2-3 kalimat mengenai dasar pertimbangan hakim)",
+        "formalitas_permohonan": "string (rangkuman singkat info permohonan kasasi jika ada)"
+      }}
+    }}
+
+    INSTRUKSI PENTING:
+    1.  `para_pihak`: Selalu dalam format LIST. Ekstrak SEMUA pihak yang terlibat. Untuk setiap pihak, buatkan objek JSON terpisah.
+    2.  `RANGKUMAN`: Untuk semua field deskriptif, buatlah rangkuman inti sarinya saja dalam 1-3 kalimat.
+    3.  `NOMOR IDENTITAS`: Untuk `nomor_ktp`, `nomor_kk`, dll., ekstrak HANYA ANGKA-nya saja sebagai string.
+    4.  `null`: Jika ada informasi yang tidak ditemukan, WAJIB gunakan nilai null.
+
+    Sekarang, analisis teks putusan berikut dan buatlah JSON yang sesuai.
+    ---
+    Teks Putusan: {teks_pdf}
+    ---
+    """
+    if not model:
+        return None
+    try:
+        response = model.generate_content(
+            prompt,
+            generation_config=genai.GenerationConfig(response_mime_type="application/json")
+        )
+        return json.loads(response.text)
+    except Exception as e:
+        print(f"  └─ ✗ Error saat memproses dengan Gemini: {e}")
+        return None
+
+# --- 5. Fungsi Pipeline untuk Memproses URL ---
+def proses_putusan_from_url(url):
+    """Mengambil URL, mengunduh PDF, dan menjalankan pipeline ekstraksi."""
+    print(f"Memproses URL: {url}")
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        pdf_content = None
+        pdf_filename = ""
+
+        if url.lower().endswith('.pdf'):
+            print("  └─ Terdeteksi link PDF langsung. Mengunduh file...")
+            pdf_url = url
+        else:
+            print("  └─ Terdeteksi link halaman web. Mencari link PDF...")
+            page_response = requests.get(url, headers=headers, timeout=15)
+            page_response.raise_for_status()
+            
+            soup = BeautifulSoup(page_response.content, 'html.parser')
+            pdf_link_tag = soup.find('a', href=lambda href: href and "/pdf/" in href)
+            
+            if not pdf_link_tag:
+                print("  └─ ✗ Link unduhan PDF tidak ditemukan.")
+                return None
+                
+            pdf_url = pdf_link_tag['href']
+            print(f"  └─ ✓ Link PDF ditemukan: {pdf_url}")
+
+        # Unduh konten file PDF
+        pdf_response = requests.get(pdf_url, headers=headers, timeout=30)
+        pdf_response.raise_for_status()
+        pdf_content = pdf_response.content
+        
+        # PERUBAHAN: Menyimpan file PDF yang diunduh
+        # Membuat nama file dari bagian akhir URL
+        pdf_filename = pdf_url.split('/')[-1]
+        if not pdf_filename.lower().endswith('.pdf'):
+            pdf_filename += ".pdf" # Tambahkan ekstensi jika tidak ada
+            
+        save_path = os.path.join(PDF_DOWNLOAD_FOLDER, pdf_filename)
+        with open(save_path, 'wb') as f:
+            f.write(pdf_content)
+        print(f"  └─ ✓ PDF berhasil diunduh dan disimpan di: {save_path}")
+        
+        # Ekstrak teks dari konten PDF di memori
+        with fitz.open(stream=pdf_content, filetype="pdf") as doc:
+            full_text = "".join(page.get_text() for page in doc)
+        
+        if not full_text.strip():
+            print("  └─ ✗ Gagal mengekstrak teks dari PDF.")
+            return None
+            
+        print("  └─ Mengirim teks ke Gemini untuk ekstraksi...")
+        hasil_json = ekstrak_data_dengan_gemini(full_text)
+        
+        if hasil_json:
+            hasil_json['sumber_url'] = url
+            hasil_json['nama_file_lokal'] = pdf_filename # Menambahkan nama file lokal
+        
+        return hasil_json
+
+    except Exception as e:
+        print(f"  └─ ✗ Terjadi error: {e}")
+        return None
+
+# --- 6. Fungsi Utama untuk Menjalankan Seluruh Proses ---
+def main():
+    if not model:
+        print("Eksekusi dihentikan karena konfigurasi model gagal.")
+        return
+    
+    # PERUBAHAN: Membuat folder untuk unduhan jika belum ada
+    if not os.path.exists(PDF_DOWNLOAD_FOLDER):
+        os.makedirs(PDF_DOWNLOAD_FOLDER)
+        print(f"✓ Folder '{PDF_DOWNLOAD_FOLDER}' berhasil dibuat.")
+
+    list_url_putusan = [
+        "https://putusan3.mahkamahagung.go.id/direktori/putusan/42dfaa53298aa3a2649588946b89167e.html",
+        "https://putusan3.mahkamahagung.go.id/direktori/putusan/zaf066d7f7faca26a8ec313534333431.html",
+        "https://putusan3.mahkamahagung.go.id/direktori/putusan/84771ffa631520272cab7efbc09042c0.html"
+    ]
+    
+    list_hasil_akhir = []
+    if os.path.exists(OUTPUT_FILENAME_JSON):
+        try:
+            with open(OUTPUT_FILENAME_JSON, 'r', encoding='utf-8') as f:
+                list_hasil_akhir = json.load(f)
+        except json.JSONDecodeError:
+            pass
+    
+    processed_urls = {item.get('sumber_url') for item in list_hasil_akhir}
+    urls_to_process = [url for url in list_url_putusan if url not in processed_urls]
+
+    if not urls_to_process:
+        print("\n✓ Semua URL sudah diproses sebelumnya.")
+    else:
+        print(f"\nMenemukan {len(urls_to_process)} URL baru untuk diproses.")
+        for url in urls_to_process:
+            hasil = proses_putusan_from_url(url)
+            if hasil:
+                list_hasil_akhir.append(hasil)
+                print("  └─ ✓ Ekstraksi dari URL berhasil!\n")
+            else:
+                print("  └─ ✗ Gagal memproses URL ini.\n")
+            
+            time.sleep(20)
+
+    if list_hasil_akhir:
+        print(f"\nMenyimpan total {len(list_hasil_akhir)} data ke dalam file JSON...")
+        with open(OUTPUT_FILENAME_JSON, 'w', encoding='utf-8') as f:
+            json.dump(list_hasil_akhir, f, ensure_ascii=False, indent=4)
+        print(f"✓ Data berhasil disimpan di '{OUTPUT_FILENAME_JSON}'")
+    else:
+        print("\nTidak ada data yang berhasil diekstrak.")
+
+if __name__ == "__main__":
+    main()
