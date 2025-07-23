@@ -1,4 +1,4 @@
-#6. Fungsi Utama untuk Menjalankan Seluruh Proses
+#Fungsi Utama untuk Menjalankan Seluruh Proses
 def main():
     if not model:
         print("Eksekusi dihentikan karena konfigurasi model gagal.")
