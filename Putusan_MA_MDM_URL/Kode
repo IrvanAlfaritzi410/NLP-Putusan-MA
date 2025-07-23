@@ -1,8 +1,24 @@
-# ==============================================================================
-# EKSTRAKSI DARI URL DENGAN PROMPT UNIVERSAL
-# ==============================================================================
+####PUTUSAN MA MDM DENGAN URL
 
-# --- 1. Impor Library ---
+#1. Buat file requirements.txt  
+ #A. Menginstall Library yang diperlukan 
+google-generativeai
+requests
+beautifulsoup4
+PyMuPDF
+pandas
+python-dotenv
+openpyxl
+
+ #B. Download library menggunakan terminal di vscode dengan 
+pip install -r requirements.txt
+
+
+#1. Buat File .env (untuk keamanan API)
+GEMINI_API_KEY="MASUKKAN_KUNCI_API_ANDA_DI_SINI"
+
+#2. Buat fie config.py
+ #A. Impor Library 
 import os
 import json
 import pandas as pd
@@ -15,12 +31,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --- 2. Konfigurasi Proyek ---
+ #B. Konfigurasi Proyek
 PDF_DOWNLOAD_FOLDER = 'downloaded_pdfs'
 OUTPUT_FILENAME_JSON = 'hasil_ekstraksi_putusan.json'
-MODEL_NAME = 'gemini-1.5-flash-latest'
+MODEL_NAME = 'gemini-2.5-flash'
 
-# --- 3. Setup API Key Gemini ---
+ #C. Setup API Key Gemini
 GOOGLE_API_KEY = os.environ.get('GEMINI_API_KEY')
 model = None
 if GOOGLE_API_KEY:
@@ -32,13 +48,10 @@ if GOOGLE_API_KEY:
         print(f"✗ Konfigurasi API gagal: {e}")
 else:
     print("✗ Peringatan: Environment variable 'GEMINI_API_KEY' tidak ditemukan.")
-
-# --- 4. FUNGSI EKSTRAKSI DENGAN PROMPT UNIVERSAL BARU ---
+    
+#3. Buat File extractor.py
+ #A. FUNGSI EKSTRAKSI DENGAN PROMPT UNIVERSAL BARU ---
 def ekstrak_data_dengan_gemini(teks_pdf):
-    """
-    Menganalisis teks PDF dan mengekstrak informasi detail ke dalam 
-    satu format JSON universal yang komprehensif.
-    """
     # PROMPT BARU: Satu template untuk semua jenis kasus.
     prompt = f"""
     Anda adalah asisten hukum AI yang sangat ahli dalam menganalisis dan menstrukturkan dokumen putusan pengadilan di Indonesia.
@@ -111,7 +124,7 @@ def ekstrak_data_dengan_gemini(teks_pdf):
         print(f"  └─ ✗ Error saat memproses dengan Gemini: {e}")
         return None
 
-# --- 5. Fungsi Pipeline untuk Memproses URL ---
+#B. Fungsi Pipeline untuk Memproses URL ---
 def proses_putusan_from_url(url):
     """Mengambil URL, mengunduh PDF, dan menjalankan pipeline ekstraksi."""
     print(f"Memproses URL: {url}")
@@ -143,11 +156,10 @@ def proses_putusan_from_url(url):
         pdf_response.raise_for_status()
         pdf_content = pdf_response.content
         
-        # PERUBAHAN: Menyimpan file PDF yang diunduh
         # Membuat nama file dari bagian akhir URL
         pdf_filename = pdf_url.split('/')[-1]
         if not pdf_filename.lower().endswith('.pdf'):
-            pdf_filename += ".pdf" # Tambahkan ekstensi jika tidak ada
+            pdf_filename += ".pdf" 
             
         save_path = os.path.join(PDF_DOWNLOAD_FOLDER, pdf_filename)
         with open(save_path, 'wb') as f:
@@ -175,7 +187,8 @@ def proses_putusan_from_url(url):
         print(f"  └─ ✗ Terjadi error: {e}")
         return None
 
-# --- 6. Fungsi Utama untuk Menjalankan Seluruh Proses ---
+#4. Buat File main.py
+ #Fungsi Utama untuk Menjalankan Seluruh Proses ---
 def main():
     if not model:
         print("Eksekusi dihentikan karena konfigurasi model gagal.")
@@ -227,3 +240,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#5. Jalankan model dengan menggunakan kode berikut pada terminal
+python main.py 
