@@ -28,7 +28,7 @@ STRUKTUR JSON YANG WAJIB DIIKUTI:
       "pekerjaan": "string",
       "agama": "string",
       "alamat": "string",
-      "nomor_ktp": "string",
+      "NIK": "string",
       "nomor_kk": "string",
       "nomor_akta_kelahiran": "string",
       "nomor_paspor": "string"
@@ -55,7 +55,7 @@ STRUKTUR JSON YANG WAJIB DIIKUTI:
 INSTRUKSI PENTING:
 1.  `para_pihak`: Selalu dalam format LIST. Ekstrak SEMUA pihak yang terlibat.
 2.  `RANGKUMAN`: Untuk semua field deskriptif, buatlah rangkuman inti sarinya saja.
-3.  `NOMOR IDENTITAS`: Untuk `nomor_ktp`, dll., ekstrak HANYA ANGKA-nya saja.
+3.  `NOMOR IDENTITAS`: Untuk `NIK`, dll., ekstrak HANYA ANGKA-nya saja.
 4.  `null`: Jika informasi tidak ditemukan, WAJIB gunakan nilai null.
 
 Sekarang, analisis teks putusan berikut dan buatlah JSON yang sesuai.
